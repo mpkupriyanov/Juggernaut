@@ -255,7 +255,8 @@ extension Juggernaut: URLSessionDownloadDelegate {
 				self.delegate?.juggernaut?(self, didPopulatedInterruptedTasks: self.items)
 			} else {
 
-				for(index, item) in self.items.enumerated() {
+                let enumeratedItems = self.items
+                for(index, item) in enumeratedItems.enumerated() {
 
 					if task.isEqual(item.task) {
 
