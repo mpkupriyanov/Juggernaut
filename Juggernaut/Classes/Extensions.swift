@@ -89,11 +89,11 @@ extension FileManager {
 
 	public func size(_ length : Int64) -> Float {
 		let data = Float64(length)
-		if data >= gigabytes {
+		if data >= gigabytes && gigabytes != 0 {
 			return Float(data / gigabytes)
-		} else if data >= megabytes {
+		} else if data >= megabytes && megabytes != 0 {
 			return Float(data / megabytes)
-		} else if data >= kilobytes {
+		} else if data >= kilobytes && kilobytes != 0 {
 			return Float(data / kilobytes)
 		} else {
 			return Float(data)
